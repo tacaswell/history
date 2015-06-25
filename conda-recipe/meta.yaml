@@ -1,0 +1,27 @@
+package:
+  name: history
+  version: {{ environ['GIT_DESCRIBE_TAG'] or '0.0.0' }}.post{{ environ['GIT_DESCRIBE_NUMBER'] or 0 }}
+
+source:
+  git_url: ../
+
+build:
+  number: 0
+  # Note that this will override the default build string with the Python
+  # and NumPy versions
+  # string: {{ environ.get('GIT_BUILD_STR', '0.0.0') }}_np{{ np }}py{{ py }}
+
+requirements:
+  build:
+    - python
+  run:
+    - python
+    - six
+
+test:
+  imports:
+    - 'history'
+
+about:
+  home: https://github.com/Nikea/history
+  license: BSD
