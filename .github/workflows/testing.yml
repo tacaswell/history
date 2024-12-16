@@ -35,6 +35,6 @@ jobs:
           set -vxeuo pipefail
 
           pip install pytest pytest-cov
-          python setup.py install
+          pip install -v .
 
           py.test --cov=historydict --cov-report term-missing
